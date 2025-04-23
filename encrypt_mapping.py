@@ -4,11 +4,11 @@ code = " " + string.punctuation + string.digits + string.ascii_letters
 code = list(code)
 
 user_message = ""
-cipher_text = ""  
+cipher_text = ""
 
 history = {}
 
-key = code.copy()  
+key = code.copy()
 random.seed(42)
 random.shuffle(key)
 
@@ -45,10 +45,10 @@ def encrypt(user_message):
         time.sleep(1)
         print(f"encrypted text: {cipher_text}")
         print(" ")
-        
+
         time.sleep(1)
         pyperclip.copy(cipher_text)
-        print("text copied to clipboard")
+        print("text copied to clipboard.")
 
         saving_encryptions(user_message, cipher_text)
 
@@ -64,7 +64,7 @@ def decrypt(cipher_text):
 
     if f"{cipher_text}" in content:
         for letter in cipher_text:
-            index = key.index(letter) 
+            index = key.index(letter)
             user_message += code[index]
 
         time.sleep(1)
@@ -72,7 +72,7 @@ def decrypt(cipher_text):
 
         time.sleep(1)
         pyperclip.copy(user_message)
-        print("text copied to clipboard")
+        print("text copied to clipboard.")
     else:
         time.sleep(1)
         print("--- this entry does not exist in the database ---")
